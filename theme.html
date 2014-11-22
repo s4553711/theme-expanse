@@ -15,10 +15,14 @@
 
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="{{ assets('css/style.css') }}">
-
+    <link rel="stylesheet" type="text/css" href="http://highlightjs.org/static/styles/tomorrow-night.css">
+    <script src="http://highlightjs.org/static/highlight.pack.js"></script>
+    
     <!-- standard google analytics -->
     {% if site.analytics %}
     <script>
+    hljs.configure({tabReplace: '    '});
+    hljs.initHighlightingOnLoad();
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', '{{ site.analytics }}']);
     _gaq.push(['_trackPageview']);
