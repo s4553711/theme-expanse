@@ -21,8 +21,14 @@
     <!-- standard google analytics -->
     {% if site.analytics %}
     <script>
-    hljs.configure({tabReplace: '    '});
-    hljs.initHighlightingOnLoad();
+    $(document).ready(function(){
+      $('pre code').each(function(i, block) {
+        hljs.configure({tabReplace: '    '});
+        //hljs.initHighlightingOnLoad();
+        hljs.highlightBlock(block);
+        console.log('activate success');
+      });
+    });
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', '{{ site.analytics }}']);
     _gaq.push(['_trackPageview']);
